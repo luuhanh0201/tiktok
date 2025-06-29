@@ -1,13 +1,14 @@
 import images from "@/assets/images";
 import styles from "./Header.module.scss";
 import classNames from "classnames/bind";
-import { faCircleXmark, faMagnifyingGlass, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { faCircleXmark, faMagnifyingGlass, faSignIn, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Tippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css";
 import { useState } from "react";
 import { Wrapper as PopperWrapper } from "@/components/Popper";
 import AccountItem from "@/components/AccountItem";
+import Button from "@/components/Button";
 const cx = classNames.bind(styles);
 function Header() {
     const [searchValue, setSearchValue] = useState("");
@@ -24,9 +25,9 @@ function Header() {
                         <div className={cx("search-result")} tabIndex="-1" {...attrs}>
                             <PopperWrapper>
                                 <h4 className={cx("search-title")}>Accounts</h4>
-                                <AccountItem/>
-                                <AccountItem/>
-                                <AccountItem/>
+                                <AccountItem />
+                                <AccountItem />
+                                <AccountItem />
                             </PopperWrapper>
                         </div>
                     )}
@@ -55,8 +56,17 @@ function Header() {
                 </Tippy>
                 {/* Action button */}
                 <div className={cx("action")}>
-                    <button type="submit">Login</button>
-                    <button type="submit">Sign up</button>
+                    <Button
+                        text
+                        onClick={() => {
+                            alert("click");
+                        }}
+                    >
+                        Upload
+                    </Button>
+                    <Button primary leftIcon={<FontAwesomeIcon icon={faSignIn} />}>
+                        Login
+                    </Button>
                 </div>
             </div>
         </header>
