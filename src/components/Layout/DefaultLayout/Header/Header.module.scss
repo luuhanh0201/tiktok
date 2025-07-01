@@ -13,6 +13,7 @@
     justify-content: space-between;
 }
 .logo {
+    user-select: none;
     align-items: center;
     text-align: center;
 }
@@ -59,10 +60,10 @@
 // .search-btn {
 // }
 .action {
+    user-select: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 .clear-icon,
 .loading-icon {
@@ -104,4 +105,17 @@
     cursor: pointer;
 }
 
+.action-btn {
+    display: flex;
+    font-size: 2.4rem;
+    padding: 12px 8px;
+    cursor: pointer;
+}
+.user-avatar {
+    width: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 12px;
+    cursor: pointer;
+}
 
