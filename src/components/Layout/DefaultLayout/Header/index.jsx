@@ -3,14 +3,12 @@ import styles from "./Header.module.scss";
 import classNames from "classnames/bind";
 import {
     faCircleXmark,
-    faCloudUpload,
     faCoins,
     faEarthAsia,
     faEllipsisVertical,
     faGear,
     faKeyboard,
     faMagnifyingGlass,
-    faMessage,
     faQuestion,
     faSignIn,
     faSignOut,
@@ -26,6 +24,8 @@ import { Wrapper as PopperWrapper } from "@/components/Popper";
 import AccountItem from "@/components/AccountItem";
 import Button from "@/components/Button";
 import Menu from "@/components/Popper/Menu";
+import { MessageIcon, NotificationIcon, UploadIcon } from "@/components/Icons";
+import Image from "@/components/Image";
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
     {
@@ -157,12 +157,17 @@ function Header() {
                         <>
                             <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
                                 <button className={cx("action-btn")}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <UploadIcon height="28" width="28" />
                                 </button>
                             </Tippy>
                             <Tippy delay={[0, 200]} content="Message" placement="bottom">
                                 <button className={cx("action-btn")}>
-                                    <FontAwesomeIcon icon={faMessage} />
+                                    <MessageIcon height="28" width="28" />
+                                </button>
+                            </Tippy>
+                            <Tippy delay={[0, 200]} content="Notification" placement="bottom">
+                                <button className={cx("action-btn")}>
+                                    <NotificationIcon height="28" width="28" />
                                 </button>
                             </Tippy>
                         </>
@@ -183,10 +188,11 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx("user-avatar")}
                                 alt="Lưu Hạnh"
-                                src="https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-1/472111998_3829560317292102_3046265317876554402_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=107&ccb=1-7&_nc_sid=1d2534&_nc_ohc=3ZsVEmnsVDgQ7kNvwG4tc5S&_nc_oc=AdmlAJzPv9OwWvSrErlBXUyYYStxQM-4QFHfhXpvlPrcXDIbq6eRoRPR-5IfN4NU8JuWZHFCYAoodwHVkliQc0Rv&_nc_zt=24&_nc_ht=scontent.fhan2-5.fna&_nc_gid=s6BlZmZifccwpaVjuN2Afg&oh=00_AfMgD-nvw2Xqt_DlY8tIiVR6E4V0h7ghfOZv7anHoLLrAQ&oe=68696A74"
+                                src=".https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-1/472111998_3829560317292102_3046265317876554402_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=107&ccb=1-7&_nc_sid=1d2534&_nc_ohc=3ZsVEmnsVDgQ7kNvwG4tc5S&_nc_oc=AdmlAJzPv9OwWvSrErlBXUyYYStxQM-4QFHfhXpvlPrcXDIbq6eRoRPR-5IfN4NU8JuWZHFCYAoodwHVkliQc0Rv&_nc_zt=24&_nc_ht=scontent.fhan2-5.fna&_nc_gid=CVU_lmp-4GIkmzZlrR8d_g&oh=00_AfOtedQ0q3oN18gw-M1MEs-YoKe3jm-F-E_WI8zhYE-huw&oe=6869DAF4"
+                                fallback="https://scontent.fhan20-1.fna.fbcdn.net/v/t39.30808-6/514280371_122258777396029938_4742324996503497420_n.jpg?stp=dst-jpg_tt6&cstp=mx960x960&ctp=p526x296&_nc_cat=1&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=7bE0Dn-DxhYQ7kNvwE5aXt5&_nc_oc=AdldkWPCLUFZexmEk8sqRrDhdxgIOW_zgkzbWMnAzxYru5T2bE0yUADPElDxarNV-aBGSskoiYDeEHxDT-DzmjSP&_nc_zt=23&_nc_ht=scontent.fhan20-1.fna&_nc_gid=u1KBVrJSP5VYPhqBvuuefw&oh=00_AfPzMSwnnzYI5BxrM94qU4630gVfrFq9hx85KuV66SdWIA&oe=6869E818"
                             />
                         ) : (
                             <button className={cx("more-btn")}>
