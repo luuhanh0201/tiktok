@@ -42,7 +42,7 @@ function Button({
     }
     const classes = cx("wrapper", { primary, outline, small, large, text, disabled, rounded, [className]: className });
     return (
-        <Comp className={classes} small {...props}>
+        <Comp className={classes} {...props}>
             {leftIcon && <span className={cx("icon")}>{leftIcon}</span>}
             <span className={cx("title")}>{children}</span>
             {rightIcon && <span className={cx("icon")}>{rightIcon}</span>}

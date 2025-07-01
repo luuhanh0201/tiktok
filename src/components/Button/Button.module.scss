@@ -24,6 +24,12 @@
 .icon + .title {
     margin-left: 4px;
 }
+
+.icon {
+    display: block;
+    width: 24px;
+    text-align: center;
+}
 .rounded {
     border-radius: 999px;
     border: 1px solid #ccc;
