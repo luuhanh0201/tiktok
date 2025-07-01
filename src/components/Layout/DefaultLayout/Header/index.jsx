@@ -24,6 +24,43 @@ const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
         title: "Tiếng Việt",
+        children: {
+            title: "Language",
+            data: [
+                {
+                    code: "en",
+                    title: "English", // United States, Canada, Australia, etc.
+                },
+                {
+                    code: "vi",
+                    title: "Tiếng Việt", // Vietnam
+                },
+                {
+                    code: "fi",
+                    title: "Suomi", // Finland
+                },
+                {
+                    code: "no",
+                    title: "Norsk", // Norway
+                },
+                {
+                    code: "se",
+                    title: "Svenska", // Sweden
+                },
+                {
+                    code: "dk",
+                    title: "Dansk", // Denmark
+                },
+                {
+                    code: "ch",
+                    title: "Schweizerdeutsch", // Switzerland (Swiss German)
+                },
+                {
+                    code: "nl",
+                    title: "Nederlands", // Netherlands
+                },
+            ],
+        },
     },
     {
         icon: <FontAwesomeIcon icon={faQuestion} />,
@@ -36,7 +73,10 @@ const MENU_ITEMS = [
 ];
 function Header() {
     const [searchValue, setSearchValue] = useState("");
-    // const [searchResult, setSearchResult] = useState([]);
+
+    const handleMenuChange = (menuItem) => {
+        console.log(menuItem);
+    };
 
     return (
         <header className={cx("wrapper")}>
@@ -91,7 +131,7 @@ function Header() {
                     <Button primary leftIcon={<FontAwesomeIcon icon={faSignIn} />}>
                         Login
                     </Button>
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                         <button className={cx("more-btn")}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>

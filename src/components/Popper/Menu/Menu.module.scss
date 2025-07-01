@@ -15,3 +15,23 @@
 .menu-popper {
     padding-bottom: 6px;
 }
+
+// Header menu
+
+.header {
+    position: relative;
+    height: 50px;
+    top: -4px;
+}
+.back-btn {
+    width: 50px;
+    height: 100%;
+    cursor: pointer;
+}
+.header-title {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
