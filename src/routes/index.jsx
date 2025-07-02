@@ -1,6 +1,7 @@
 import { HeaderOnly } from "@/components/Layout";
 import FollowingPage from "@/Pages/FollowingPage";
 import HomePage from "@/Pages/HomePage";
+import ProfilePage from "@/Pages/ProfilePage";
 import Search from "@/Pages/Search";
 import UploadPage from "@/Pages/UploadPage";
 
@@ -12,6 +13,10 @@ export const publicRoutes = [
     {
         path: "/home",
         component: HomePage,
+    },
+    {
+        path: "/@:nickname",
+        component: ProfilePage,
     },
     {
         path: "/following",
